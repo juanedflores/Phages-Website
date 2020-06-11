@@ -11,13 +11,16 @@ let yvalues;
 const xspacing = 21;
 const period = 500.0;
 let dx;
+let canvas;
 
 function preload () {
   myFont = loadFont("assets/fff-forward.regular.ttf");
 }
 
 function setup () {
-  createCanvas(windowWidth, windowHeight, WEBGL);
+  canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+  canvas.position(0, 0);
+  canvas.style('z-index', '-1');
   g = createGraphics(tw, th);
   g.background(0, 0);
   g.textSize(30);
@@ -66,4 +69,8 @@ function makePlanes () {
     canvases[y].copy(g, 0, y * slice, 200, slice, 0, 0, 200, slice);
   }
   yvalues = new Array(canvases.length);
+}
+
+function windowResized () {
+  resizeCanvas(windowWidth, windowHeight);
 }
