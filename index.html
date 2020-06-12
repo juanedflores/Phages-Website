@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
     <title>PhagesWebsite</title>
     <link rel="stylesheet" href="./css/style.css" />
@@ -11,42 +15,50 @@
     <!-- <script src="libraries/p5.dom.js"></script> -->
     <!-- <script src="libraries/p5.sound.js"></script> -->
     <script src="sketch.js"></script>
+    <script src="inline.js"></script>
 
     <style>
       body {
         margin: 0;
         padding: 0;
-        <!-- overflow: hidden; -->
+        overflow: hidden;
       }
       canvas {
-        <!-- margin: auto; -->
+        margin: auto;
       }
     </style>
   </head>
   <body>
     <nav id="navoptions" role="navigation">
       <ul>
-        <li><a href="index.html">About Us</a></li>
-        <li>|</li>
-        <li><a href="about.asp">Mission Statement</a></li>
-        <li>|</li>
-        <li><a href="default.asp">Installations</a></li>
-        <li>|</li>
-        <li><a href="blog.html">Performances</a></li>
-        <li>|</li>
-        <li><a href="contact.asp">Contact</a></li>
+        <li><a onclick="getPage('about.html');" href="#">About Us</a></li>
+        <!-- <li>|</li> -->
+        <li>
+          <a onclick="getPage('mission.html');" href="#">Mission Statement</a>
+        </li>
+        <!-- <li>|</li> -->
+        <li>
+          <a onclick="getPage('installations.html');" href="#">Installations</a>
+        </li>
+        <!-- <li>|</li> -->
+        <li>
+          <a onclick="getPage('performances.html');" href="#">Performances</a>
+        </li>
+        <!-- <li>|</li> -->
+        <li><a onclick="getPage('contact.html');" href="#">Contact</a></li>
       </ul>
     </nav>
-    <div class="videowrapper">
-      <iframe
-        src="https://player.vimeo.com/video/372649404?autoplay=1&loop=1&color=ffffff&portrait=0"
-        width="640"
-        height="360"
-        frameborder="0"
-        allow="autoplay; fullscreen"
-        allowfullscreen
-      ></iframe>
+    <div id="main">
+      <div id="contentArea"></div>
     </div>
+    <!-- <div class="videowrapper"> -->
+    <!--   <iframe -->
+    <!--     src="https://player.vimeo.com/video/372649404?autoplay=1&loop=1&color=ffffff&portrait=0" -->
+    <!--     frameborder="0" -->
+    <!--     allow="autoplay; fullscreen" -->
+    <!--     allowfullscreen -->
+    <!--   ></iframe> -->
+    <!-- </div> -->
     <script src="https://player.vimeo.com/api/player.js"></script>
   </body>
 </html>

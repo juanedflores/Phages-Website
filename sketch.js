@@ -6,7 +6,7 @@ const th = 500;
 let canvases = [];
 const slice = 5;
 let theta = 0.0;
-const amplitude = 10.0;
+let amplitude = 400.0;
 let yvalues;
 const xspacing = 21;
 const period = 500.0;
@@ -37,13 +37,19 @@ function setup () {
 
 function draw () {
   background(20);
-  // rotateZ(-1);
-  rotateX(0);
-  // rotateY(1);
-  translate(-800, -900, -1000);
+  // rotateZ(theta);
+  // rotateX(theta);
+  // rotateY(theta);
+  // translate(-800, -900, -1000);
+  const camX = map(mouseX, 0, width, 400, 0);
+  // camera(0, 0, (height / 2) / tan(PI / 6), 0, 0, 0, 0, 1, 0);
+  translate(0, -900, -1000);
+  // camera(0, 0, (height / 2) / tan(PI / 6), 0, 0, 0, 0, 1, 0);
 
   noStroke();
   // orbitControl();
+
+  amplitude = map(mouseY, 0, width, 400.0, 20.0);
 
   // stroke(255);
   theta += 0.02;
@@ -53,6 +59,7 @@ function draw () {
     x += dx;
   }
 
+  lights();
   let locY = 0;
   for (let i = 0; i < canvases.length; i++) {
     translate(0, slice + 14, yvalues[i]);
