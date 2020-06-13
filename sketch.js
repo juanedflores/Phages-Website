@@ -56,7 +56,7 @@ function draw () {
   if (mouseY != 0) {
     amplitude = map(mouseY, 0, (height / 3), 400.0, 20.0);
   } if (mouseY <= 0 || amplitude < 0) {
-    amplitude = constrain(amplitude, -20.0, 0);
+    amplitude = constrain(amplitude, 20.0, 0);
   }
   theta += 0.02;
   let x = theta;
