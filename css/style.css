@@ -36,7 +36,9 @@ body {
   display: inline-block;
   margin: 0 2em 0 0;
   font-size: 3hv;
+  padding: 0 5px 0 5px;
   text-align: center;
+  background-color: black;
 }
 
 video {
@@ -62,4 +64,8 @@ nav a {
 
 a:hover {
   color: hotpink;
+}
+
+p {
+  background-color: rgba(0, 0, 0, 0.5);
 }

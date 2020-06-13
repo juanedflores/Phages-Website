@@ -6,7 +6,7 @@ const th = 500;
 let canvases = [];
 const slice = 5;
 let theta = 0.0;
-let amplitude = 400.0;
+let amplitude = 20.0;
 let yvalues;
 const xspacing = 21;
 const period = 500.0;
@@ -30,9 +30,6 @@ function setup () {
 
   logo = createGraphics(600, 600);
   logo.background(0, 0);
-  // img.resize(200, 200);
-  // logo.image(img, (logo.width / 2), (logo.height / 2));
-  // img.resize(1200, 1200);
   logo.image(img, 0, 0);
 
   g = createGraphics(tw, th);
@@ -56,8 +53,9 @@ function setup () {
 function draw () {
   background(20);
 
-  amplitude = map(mouseY, 0, (height / 3), 400.0, 20.0);
-  if (amplitude < 0) {
+  if (mouseY != 0) {
+    amplitude = map(mouseY, 0, (height / 3), 400.0, 20.0);
+  } if (mouseY <= 0 || amplitude < 0) {
     amplitude = constrain(amplitude, -20.0, 0);
   }
   theta += 0.02;
@@ -68,16 +66,23 @@ function draw () {
   }
 
   // Check if amplitude is near 0 to show logo.
-  if (mouseY > height / 10) {
-    push();
-    let moveZ = map(mouseY, 0, height / 3, -6000.0, 0);
-    moveZ = constrain(moveZ, -4000.0, -500.0);
-    translate(0, 0, moveZ);
-    tint(255, 0, 0);
+  push();
+  // If mouseY is 0 then then page has just been entered without interaction.
+  if (mouseY == 0) {
+    translate(0, 0, -500);
     texture(logo);
     plane(600, 600);
-    pop();
+  } else {
+    // Normal site interaction.
+    if (mouseY > height / 5) {
+      let moveZ = map(mouseY, 0, height / 3, -6000.0, 0);
+      moveZ = constrain(moveZ, -4000.0, -500.0);
+      translate(0, 0, moveZ);
+      texture(logo);
+      plane(600, 600);
+    }
   }
+  pop();
 
   translate(0, -900, -1000);
   noStroke();
