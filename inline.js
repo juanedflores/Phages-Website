@@ -1,5 +1,5 @@
 /*
- * Get the HTML for the specific menu bar link.
+ * Get the HTML for the specific navigation bar link.
  */
 function getPage (filename) {
   const fileUrl = filename; // provide file location
