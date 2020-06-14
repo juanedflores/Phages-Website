@@ -9,6 +9,19 @@ body {
   background-color: #141414;
 }
 
+div p {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: hotpink;
+}
+
 #main {
   padding-top: 3em;
 }
@@ -17,7 +30,6 @@ body {
   margin: 0;
   padding: 0;
   background: rgba(255, 255, 255, 0);
-  text-align: center;
 }
 
 #navoptions ul {
@@ -27,45 +39,40 @@ body {
   text-align: center;
 }
 
-#menu ul {
-  padding: 0;
-}
-
 #navoptions li {
   list-style-type: none;
   display: inline-block;
-  margin: 0 2em 0 0;
+  /* display: block; */
+  margin: 5px 10px;
   font-size: 3hv;
   padding: 0 5px 0 5px;
   text-align: center;
   background-color: black;
-}
-
-video {
-  width: 100%;
+  border: 1px solid white;
 }
 
 .videowrapper {
-  padding-top: 100px;
-  align: center;
+  padding: 56.25% 0 0 0;
+  position: relative;
+  /* padding-top: 100px; */
+  /* align: center; */
 }
 
 .videowrapper iframe {
-  height: 360;
-  width: 640;
-  display: block;
-  margin: 0 auto;
-}
-nav a {
-  color: #ffffff;
-  display: block;
-  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
 }
 
-a:hover {
-  color: hotpink;
-}
-
-p {
-  background-color: rgba(0, 0, 0, 0.5);
+@media screen and (max-width: 768px) {
+  /* For mobile phones */
+  .videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
