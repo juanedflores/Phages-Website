@@ -9,8 +9,28 @@ body {
   background-color: #141414;
 }
 
-div p {
-  background-color: rgba(0, 0, 0, 0.5);
+div.content {
+  margin: auto;
+  max-width: 70em;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+div.about {
+  display: flex;
+  padding: 2em;
+}
+
+div.about img {
+  padding: 0 2em 0 0;
+  max-width: 40%;
+}
+
+div.about p {
+  font-size: 18px;
+}
+
+div.mission p {
+  padding: 1em;
 }
 
 nav a {
@@ -23,7 +43,7 @@ a:hover {
 }
 
 #main {
-  padding-top: 3em;
+  padding-top: 1em;
 }
 
 #navoptions {
@@ -44,7 +64,6 @@ a:hover {
   display: inline-block;
   /* display: block; */
   margin: 5px 10px;
-  font-size: 3hv;
   padding: 0 5px 0 5px;
   text-align: center;
   background-color: black;
@@ -54,11 +73,11 @@ a:hover {
 .videowrapper {
   padding: 56.25% 0 0 0;
   position: relative;
-  /* padding-top: 100px; */
-  /* align: center; */
+  vertical-align: middle;
 }
 
 .videowrapper iframe {
+  vertical-align: middle;
   position: absolute;
   top: 0;
   left: 0;
@@ -66,13 +85,95 @@ a:hover {
   height: 60%;
 }
 
-@media screen and (max-width: 768px) {
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: #2196f3; */
+  padding: 10px;
+  margin: auto;
+
+  max-width: 45em;
+}
+
+.grid-item {
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  color: red;
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  /* width: 10vw; */
+  /* height: 10vw; */
+  /* width: auto; */
+  /* height: 10vw; */
+  /* margin: auto; */
+  padding: 4px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  /* width: auto; */
+  /* height: auto; */
+  /* margin: auto; */
+}
+
+.overlay {
+  /* position: absolute; */
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #008cba;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.grid-item:hover .overlay {
+  opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
   /* For mobile phones */
   .videowrapper iframe {
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+  /* About Page */
+  div.about {
+    margin: 0;
+    display: block;
+  }
+
+  div.about img {
+    padding: 0;
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 55%;
+  }
+
+  .text {
+    font-size: 16px;
   }
 }
