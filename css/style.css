@@ -11,6 +11,7 @@ body {
 
 div.content {
   margin: auto;
+  padding: 1.5em;
   max-width: 70em;
   background-color: rgba(0, 0, 0, 0.9);
 }
@@ -62,7 +63,6 @@ a:hover {
 #navoptions li {
   list-style-type: none;
   display: inline-block;
-  /* display: block; */
   margin: 5px 10px;
   padding: 0 5px 0 5px;
   text-align: center;
@@ -73,16 +73,21 @@ a:hover {
 .videowrapper {
   padding: 56.25% 0 0 0;
   position: relative;
-  vertical-align: middle;
+  /* display: block; */
+  /* vertical-align: middle; */
+  /* height: 60%; */
+  /* max-width: 100%; */
 }
 
 .videowrapper iframe {
-  vertical-align: middle;
+  display: block;
   position: absolute;
+  vertical-align: middle;
   top: 0;
   left: 0;
+  /* width: 80%; */
   width: 100%;
-  height: 60%;
+  height: 100%;
 }
 
 .grid-container {
@@ -151,6 +156,7 @@ a:hover {
 
 @media screen and (max-width: 900px) {
   /* For mobile phones */
+
   .videowrapper iframe {
     /* position: absolute; */
     top: 0;
