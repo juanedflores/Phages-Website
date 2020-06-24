@@ -1,5 +1,5 @@
-<div class="content">
-  <div class="about">
+<div class="content" id="content">
+  <div class="about" id="about">
     <p style="text-align: center;">
       <img src="./assets/images/bio.JPG" alt="about_us" />
     </p>
@@ -21,3 +21,11 @@
     </p>
   </div>
 </div>
+<script charset="utf-8">
+  console.log("hello");
+  element = document.getElementById("about");
+  element.onload = function() {
+    element.scrollIntoView();
+    console.log("Loaded");
+  };
+</script>

@@ -6,5 +6,6 @@ function getPage (filename) {
 
   fetch(fileUrl)
     .then(r => r.text())
-    .then(t => document.getElementById("contentArea").innerHTML = t);
+    .then(t => document.getElementById("contentArea").innerHTML = t)
+    .then(() => document.getElementById("contentArea").scrollIntoView());
 }
