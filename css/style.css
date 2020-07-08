@@ -173,6 +173,11 @@ a:hover {
     height: 100%;
   }
 
+  div.content {
+    max-width: none;
+    max-height: none;
+  }
+
   /* About Page */
   div.about {
     /* margin: 0; */
