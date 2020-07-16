@@ -100,33 +100,36 @@ a:hover {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 2 1 auto;
   background-color: rgba(0, 0, 0, 0.8);
-  /* background-color: #2196f3; */
   padding: 10px;
   margin: auto;
-
-  max-width: 45em;
+  /* max-width: 45em; */
 }
 
 .grid-item {
   /* background-color: rgba(0, 0, 0, 0.8); */
+  display: block;
   color: red;
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  border: 1px solid rgba(0, 0, 0, 0.8);
   /* width: 10vw; */
   /* height: 10vw; */
   /* width: auto; */
   /* height: 10vw; */
   /* margin: auto; */
+  cursor: pointer;
   padding: 4px;
   font-size: 18px;
   text-align: center;
 }
 
 .grid-item img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  /* display: ; */
+  height: 100%;
+  width: 100%;
+
+  /* max-width: 100%; */
+  /* height: auto; */
   /* width: auto; */
   /* height: auto; */
   /* margin: auto; */
@@ -135,7 +138,7 @@ a:hover {
 .overlay {
   /* position: absolute; */
   position: relative;
-  top: 0;
+  top: 50%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -143,12 +146,13 @@ a:hover {
   width: 100%;
   opacity: 0;
   transition: 0.5s ease;
-  background-color: #008cba;
+  pointer-events: none;
+  /* background-color: #008cba; */
 }
 
 .text {
   color: white;
-  font-size: 20px;
+  font-size: 350%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -185,16 +189,20 @@ a:hover {
     /* display: block; */
   }
 
+  div.grid-item {
+    padding: 0;
+  }
+
   div.about img {
     padding: 0;
     /* display: block; */
     /* margin: auto; */
     width: 100%;
-    max-width: 80%;
+    max-width: 50%;
     max-height: 100%;
   }
 
   .text {
-    font-size: 16px;
+    font-size: 7vw;
   }
 }
