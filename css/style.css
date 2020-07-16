@@ -202,7 +202,12 @@ a:hover {
     max-height: 100%;
   }
 
+  .overlay {
+    opacity: 100;
+  }
+
   .text {
-    font-size: 7vw;
+    white-space: nowrap;
+    font-size: 12vw;
   }
 }
