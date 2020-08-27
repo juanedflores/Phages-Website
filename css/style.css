@@ -12,7 +12,6 @@ body {
 div.content {
   margin: auto;
   padding: 1.5em;
-  /* max-width: 70em; */
   max-width: 800px;
   max-height: 800px;
   background-color: rgba(0, 0, 0, 0.9);
@@ -20,13 +19,8 @@ div.content {
 
 div.about img {
   padding: 0 2em 0 0;
-  /* display: flex; */
-
   width: 40%;
   height: 80%;
-  /* width: 250%; */
-  /* height: 250%; */
-  /* max-height: 100%; */
 }
 div {
   font-size: 20px;
@@ -85,19 +79,13 @@ a:hover {
 .videowrapper {
   padding: 56.25% 0 0 0;
   position: relative;
-  /* display: block; */
-  /* vertical-align: middle; */
-  /* height: 60%; */
-  /* max-width: 100%; */
 }
 
 .videowrapper iframe {
   display: block;
   position: absolute;
-  vertical-align: middle;
   top: 0;
   left: 0;
-  /* width: 80%; */
   width: 100%;
   height: 100%;
 }
@@ -108,19 +96,12 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 10px;
   margin: auto;
-  /* max-width: 45em; */
 }
 
 .grid-item {
-  /* background-color: rgba(0, 0, 0, 0.8); */
   display: block;
   color: red;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  /* width: 10vw; */
-  /* height: 10vw; */
-  /* width: auto; */
-  /* height: 10vw; */
-  /* margin: auto; */
+  border: 1px solid rgba(255, 255, 255, 0);
   cursor: pointer;
   padding: 4px;
   font-size: 18px;
@@ -128,19 +109,11 @@ a:hover {
 }
 
 .grid-item img {
-  /* display: ; */
   height: 100%;
   width: 100%;
-
-  /* max-width: 100%; */
-  /* height: auto; */
-  /* width: auto; */
-  /* height: auto; */
-  /* margin: auto; */
 }
 
 .overlay {
-  /* position: absolute; */
   position: relative;
   top: 50%;
   bottom: 0;
@@ -148,10 +121,9 @@ a:hover {
   right: 0;
   height: auto;
   width: 100%;
-  opacity: 0;
+  opacity: 0.5;
   transition: 0.5s ease;
   pointer-events: none;
-  /* background-color: #008cba; */
 }
 
 .text {
@@ -170,11 +142,14 @@ a:hover {
   opacity: 1;
 }
 
+.grid-item:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
 @media screen and (max-width: 900px) {
   /* For mobile phones */
 
   .videowrapper iframe {
-    /* position: absolute; */
     top: 0;
     left: 0;
     width: 100%;
@@ -186,21 +161,12 @@ a:hover {
     max-height: none;
   }
 
-  /* About Page */
-  div.about {
-    /* margin: 0; */
-    /* padding: 0; */
-    /* display: block; */
-  }
-
   div.grid-item {
     padding: 0;
   }
 
   div.about img {
     padding: 0;
-    /* display: block; */
-    /* margin: auto; */
     width: 100%;
     max-width: 60%;
     max-height: 100%;
