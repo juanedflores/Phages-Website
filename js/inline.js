@@ -2,6 +2,8 @@
  * Get the HTML for the specific navigation bar link.
  */
 function getPage(filename) {
+  window.history.replaceState("", "", "/");
+
   const fileUrl = filename; // provide file location
 
   fetch(fileUrl)
@@ -11,6 +13,7 @@ function getPage(filename) {
 }
 
 let h0;
+let currentPage = "";
 
 async function loadHydra() {
   if (!h0) {
@@ -23,7 +26,12 @@ async function loadHydra() {
   }
 }
 
+function goToRoot() {
+  window.location = "/";
+}
+
 function getHydraPage(sketchname) {
+  currentPage = sketchname;
   if (sketchname == "grid") {
     grid(h0);
   }
@@ -172,7 +180,9 @@ function test(hydra) {
 }
 
 function grid(hydra) {
-  loadHydra();
+  a.show();
+  document.getElementById("hydraDescripton").innerHTML =
+    "<h3 style='margin:0.5em 0em'>Grid</h3>Audio reactive grid.";
   hydra
     .shape(2, 0.02, 0.001)
     .scrollY(0.25)
@@ -194,7 +204,10 @@ function grid(hydra) {
 }
 
 function vowels(hydra) {
-  loadHydra();
+  a.setBins(5);
+  a.show();
+  document.getElementById("hydraDescripton").innerHTML =
+    "<h3 style='margin:0.5em 0em'>Vowels</h3>Letters constructed using the built-in shape() function. Effects are triggered depending on the positions of five FFT (Fast Fourier Transform) audio bins, so it works best with various frequencies. Uses custom audio reactive functions which can be checked out <a>here</a>.";
   hydra
     .shape(4, 0.1, 0.001)
     .scrollX(() => LOWEST(3, (time % 1) * 0.01 * xdir))

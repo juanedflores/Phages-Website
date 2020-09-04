@@ -45,7 +45,7 @@ a:hover {
   color: hotpink;
 }
 
-#main {
+#contentArea {
   padding-top: 1em;
 }
 
@@ -146,8 +146,24 @@ a:hover {
   border: 1px solid rgba(255, 255, 255, 1);
 }
 
+canvas {
+  width: 100%;
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.column {
+  height: 400px;
+}
+
 @media screen and (max-width: 900px) {
-  /* For mobile phones */
+  /**
+   * For mobile devices 
+   */
 
   .videowrapper iframe {
     top: 0;
@@ -179,5 +195,9 @@ a:hover {
   .text {
     white-space: nowrap;
     font-size: 12vw;
+  }
+
+  #column {
+    border: none;
   }
 }
