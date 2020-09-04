@@ -5,7 +5,7 @@ html {
 
 body {
   color: #ffffff;
-  line-height: 1.7;
+  line-height: 1.5;
   background-color: #141414;
 }
 
@@ -18,9 +18,8 @@ div.content {
 }
 
 div.about img {
-  padding: 0 2em 0 0;
+  padding: 0 0 0 0;
   width: 40%;
-  height: 80%;
 }
 div {
   font-size: 20px;
@@ -90,22 +89,22 @@ a:hover {
   height: 100%;
 }
 
+/* done */
 .grid-container {
-  display: grid;
-  grid-template-columns: 2 1 auto;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px;
-  margin: auto;
+  display: grid; /* display is grid because it is a grid-container*/
+  grid-template-columns: 2 1; /* one column with two rows for now */
+  padding: 3vw; /* add a little bit of padding */
 }
 
+/* done */
 .grid-item {
-  display: block;
-  color: red;
-  border: 1px solid rgba(255, 255, 255, 0);
-  cursor: pointer;
-  padding: 4px;
-  font-size: 18px;
-  text-align: center;
+  cursor: pointer; /* change cursor to pointer */
+  padding: 0.5vw; /* a bit of padding around the image button */
+}
+
+/* done */
+.grid-item:hover {
+  border: 1px solid rgba(255, 255, 255, 1); /* when hovered draw white border */
 }
 
 .grid-item img {
@@ -121,9 +120,14 @@ a:hover {
   right: 0;
   height: auto;
   width: 100%;
-  opacity: 0.5;
   transition: 0.5s ease;
   pointer-events: none;
+  opacity: 0.5; /* when not hovered, half opacity */
+}
+
+/* done */
+.grid-item:hover .overlay {
+  opacity: 1;
 }
 
 .text {
@@ -136,14 +140,6 @@ a:hover {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
-}
-
-.grid-item:hover .overlay {
-  opacity: 1;
-}
-
-.grid-item:hover {
-  border: 1px solid rgba(255, 255, 255, 1);
 }
 
 canvas {
