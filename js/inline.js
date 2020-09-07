@@ -181,7 +181,7 @@ function test(hydra) {
 
 function grid(hydra) {
   a.show();
-  document.getElementById("hydraDescripton").innerHTML =
+  document.getElementById("hydraDescription").innerHTML =
     "<h3 style='margin:0.5em 0em'>Grid</h3>Audio reactive grid.";
   hydra
     .shape(2, 0.02, 0.001)
@@ -206,7 +206,7 @@ function grid(hydra) {
 function vowels(hydra) {
   a.setBins(5);
   a.show();
-  document.getElementById("hydraDescripton").innerHTML =
+  document.getElementById("hydraDescription").innerHTML =
     "<h3 style='margin:0.5em 0em'>Vowels</h3>Letters constructed using the built-in shape() function. Effects are triggered depending on the positions of five FFT (Fast Fourier Transform) audio bins, so it works best with various frequencies. Uses custom audio reactive functions which can be checked out <a>here</a>.";
   hydra
     .shape(4, 0.1, 0.001)

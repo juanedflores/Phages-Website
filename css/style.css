@@ -58,46 +58,43 @@ a:hover {
 /**
  * Navigation Bar
  */
-#navoptions {
-  margin: 0;
-  padding: 0;
-  background: rgba(255, 255, 255, 0);
-}
-
+/* done */
 #navoptions ul {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 1em;
-  text-align: center;
+  overflow-x: hidden; /* overflow content*/
+  padding: 0em; /* remove default padding and make 0 */
+  text-align: center; /* make nav bar centered */
 }
 
+/* done */
 #navoptions li {
-  list-style-type: none;
-  display: inline-block;
-  margin: 5px 10px;
-  padding: 0 5px 0 5px;
-  text-align: center;
-  background-color: black;
-  border: 1px solid white;
+  display: inline-block; /* display on same line */
+  margin: 5px 10px; /* space the buttons appart */
+  padding: 0 6px 0 6px; /* add some padding to be legible inside border */
+  background-color: black; /* nav button background color */
+  border: 1px solid white; /* nav button border */
 }
 
 /**
  * Embedded Videos
  */
+/* done */
 .videowrapper {
-  padding: 56.25% 0 0 0;
-  position: relative;
+  padding: 46.25% 0 0 0; /* set size of embedded vid */
+  position: relative; /* reference is content div */
 }
 
+/* done */
 .videowrapper iframe {
-  display: block;
-  position: absolute;
+  position: absolute; /* using videowrapper as reference */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
 
+/**
+ * Select Pages
+ */
 /* done */
 .grid-container {
   display: grid; /* display is grid because it is a grid-container*/
@@ -152,7 +149,8 @@ a:hover {
  */
 canvas {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  height: 400px;
   padding-left: 0;
   padding-right: 0;
   margin-left: auto;
@@ -160,34 +158,37 @@ canvas {
   display: block;
 }
 
-#work ul {
-  font-size: 24px;
+#hydra-list-container {
+  float: left;
+  border: 1px solid white;
+  /* height: 400px; */
+  /* height: 100%; */
+  height: auto;
+  width: 25%;
 }
 
-.column {
-  height: 400px;
+#hydra-canvas-container {
+  background-color: #bbb;
+  width: 70%;
+  float: right;
+  /* height: 400px; */
+  height: 100%;
+}
+
+#hydraDescription {
+  background-color: black;
+  padding: 1em;
+  /* display: block; */
+}
+
+#hydra-list ul {
+  font-size: 24px;
 }
 
 /**
  * For mobile devices 
  */
 @media screen and (max-width: 800px) {
-  .videowrapper iframe {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  div.content {
-    max-width: none;
-    max-height: none;
-  }
-
-  div.grid-item {
-    padding: 0;
-  }
-
   /* done */
   div.about img {
     width: auto; /* auto adjust size */
