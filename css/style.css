@@ -3,51 +3,61 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
+/* done */
 body {
-  color: #ffffff;
-  line-height: 1.5;
-  background-color: #141414;
+  color: #ffffff; /* color of text is white */
+  line-height: 1.6; /* line height for <div> elements */
+  background-color: #141414; /* background color of page */
 }
 
-div.content {
-  margin: auto;
-  padding: 1.5em;
-  max-width: 800px;
-  max-height: 800px;
-  background-color: rgba(0, 0, 0, 0.9);
-}
+/**
+ * About Page
+ */
 
-div.about img {
-  padding: 0 0 0 0;
-  width: 40%;
-}
+/* done */
 div {
-  font-size: 20px;
-  font-family: "Barlow Condensed", sans-serif;
+  font-size: 20px; /* font size */
+  font-family: "Barlow Condensed", sans-serif; /* font style */
 }
 
-div.about p {
-  font-size: 20px;
-  font-family: "Barlow Condensed", sans-serif;
+/* done */
+div.content {
+  margin: auto; /* this helps center the div with content */
+  padding: 1.5em; /* add some inner padding */
+  max-width: 800px; /* add a max width to div */
+  background-color: rgba(0, 0, 0, 0.9); /* div is a little transparent */
 }
 
-div.mission p {
-  padding: 1em;
+/* done */
+div.about img {
+  width: 40%; /* make width only 40% if large screen */
 }
 
+/* done */ /* TODO: better way to organize this? */
+div p {
+  padding: 0 1.5em;
+}
+
+/* done */
 nav a {
-  color: #ffffff;
-  text-decoration: none;
+  color: #ffffff; /* color of text color */
+  text-decoration: none; /* no decoration with links */
 }
 
+/* done */
 a:hover {
-  color: hotpink;
+  /* TODO: choose better color that makes sense for Phages? */
+  color: hotpink; /* color of nav buttons when hovered */
 }
 
+/* done */
 #contentArea {
-  padding-top: 1em;
+  padding-top: 1em; /* spacing between content and nav bar */
 }
 
+/**
+ * Navigation Bar
+ */
 #navoptions {
   margin: 0;
   padding: 0;
@@ -71,10 +81,9 @@ a:hover {
   border: 1px solid white;
 }
 
-#work ul {
-  font-size: 24px;
-}
-
+/**
+ * Embedded Videos
+ */
 .videowrapper {
   padding: 56.25% 0 0 0;
   position: relative;
@@ -107,41 +116,40 @@ a:hover {
   border: 1px solid rgba(255, 255, 255, 1); /* when hovered draw white border */
 }
 
+/* done */
 .grid-item img {
+  width: 100%; /* make img fit the size of its parent (grid item) */
   height: 100%;
-  width: 100%;
 }
 
+/* done */
 .overlay {
-  position: relative;
-  top: 50%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: auto;
-  width: 100%;
-  transition: 0.5s ease;
-  pointer-events: none;
+  position: relative; /* relative to grid-item */
+  top: 50%; /* move text 50% from top */
+  left: 50%; /* move text 50% from right */
+  transition: 0.5s ease; /* fade in/out transition */
   opacity: 0.5; /* when not hovered, half opacity */
 }
 
 /* done */
 .grid-item:hover .overlay {
-  opacity: 1;
+  opacity: 1; /* make it opaque if hovered */
 }
 
-.text {
-  color: #dd6376;
-  font-size: 350%;
+/* done */
+.overlaytext {
   position: absolute;
-  top: 50%;
-  left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  text-align: center;
+  color: #dd6376; /* color of text */
+  font-size: 350%; /* font size */
+  white-space: nowrap; /* don't wrap if name too big */
 }
 
+/**
+ * Hydra Page
+ */
 canvas {
   width: 100%;
   height: 100%;
@@ -152,15 +160,18 @@ canvas {
   display: block;
 }
 
+#work ul {
+  font-size: 24px;
+}
+
 .column {
   height: 400px;
 }
 
-@media screen and (max-width: 900px) {
-  /**
-   * For mobile devices 
-   */
-
+/**
+ * For mobile devices 
+ */
+@media screen and (max-width: 800px) {
   .videowrapper iframe {
     top: 0;
     left: 0;
@@ -177,22 +188,26 @@ canvas {
     padding: 0;
   }
 
+  /* done */
   div.about img {
-    padding: 0;
-    width: 100%;
-    max-width: 60%;
-    max-height: 100%;
+    width: auto; /* auto adjust size */
+    max-width: 50vw; /* this is max size for mobile */
   }
 
+  /* done */
   .overlay {
-    opacity: 100;
+    opacity: 100; /* just make text completely opaque for mobile */
   }
 
-  .text {
-    white-space: nowrap;
-    font-size: 12vw;
+  /* done */
+  .overlaytext {
+    white-space: nowrap; /* don't wrap if name too big */
+    font-size: 12vw; /* font should be relative to viewport */
   }
 
+  /**
+   * Hydra Page 
+   */
   #column {
     border: none;
   }
