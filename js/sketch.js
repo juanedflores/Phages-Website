@@ -94,7 +94,7 @@ function draw() {
     plane(200, 20);
     locY += i;
   }
-  noLoop();
+  // noLoop();
 }
 
 /*
