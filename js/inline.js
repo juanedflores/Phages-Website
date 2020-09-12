@@ -6,7 +6,7 @@ function getPage(filename) {
   console.log(test);
   if (
     currenturl == "http://localhost:3000/hydraselect.html" ||
-    currenturl == "http://phagesofficial.com/hydraselect.html"
+    currenturl == "https://phagesofficial.com/hydraselect.html"
   ) {
     document.getElementById("vowelsgif").style.display = "none";
     document.getElementById("hydraDescription").style.display = "none";
