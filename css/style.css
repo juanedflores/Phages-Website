@@ -237,16 +237,18 @@ canvas {
   #hydraDescription {
     /* position: relative; */
     color: white;
-    display: block;
+    /* display: block; */
+    display: none;
     /* left: 0; */
     /* bottom: 0; */
     /* position: fixed; */
   }
 
   #vowelsgif {
+    display: none;
     margin: 0.5em 0;
     left: 0;
-    display: block;
+    /* display: block; */
     width: 100vw;
   }
 }
