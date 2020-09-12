@@ -2,7 +2,20 @@
  * Get the HTML for the specific navigation bar link.
  */
 function getPage(filename) {
+  currenturl = window.location.href;
+  console.log(test);
+  if (
+    currenturl == "http://localhost:3000/hydraselect.html" ||
+    currenturl == "http://phagesofficial.com/hydraselect.html"
+  ) {
+    document.getElementById("vowelsgif").style.display = "none";
+    document.getElementById("hydraDescription").style.display = "none";
+    document.getElementById("vowelsgif").style.visibility = "hidden";
+    document.getElementById("hydraDescription").style.visibility = "hidden";
+  }
+
   window.history.replaceState("", "", "/");
+  console.log("currentpage: " + currentPage);
 
   const fileUrl = filename; // provide file location
 
@@ -26,16 +39,52 @@ async function loadHydra() {
   }
 }
 
-function goToRoot() {
-  window.location = "/";
-}
+// function goToRoot() {
+//   document.getElementById("vowelsgif").style.display = "none";
+//   document.getElementById("hydraDescription").style.display = "none";
+//   window.location = "/";
+// }
+
+let mobileToggle = false;
 
 function getHydraPage(sketchname) {
+  let isMobile = window.matchMedia("only screen and (max-width: 760px)")
+    .matches;
+
+  mobileToggle = !mobileToggle;
+
+  if (isMobile) {
+    console.log("Moble");
+    document.getElementById("vowelsgif").style.visibility = "visible";
+    document.getElementById("vowelsgif").style.display = "block";
+    document.getElementById("hydraDescription").style.visibility = "visible";
+    document.getElementById("hydraDescription").style.display = "block";
+
+    // if (mobileToggle && currentPage == sketchname) {
+    //   document.getElementById("vowelsgif").style.display = "block";
+    //   document.getElementById("hydraDescription").style.display = "block";
+    // } else {
+    //   document.getElementById("vowelsgif").style.display = "none";
+    //   document.getElementById("hydraDescription").style.display = "none";
+    // }
+  } else {
+    document.getElementById("vowelsgif").style.visibility = "hidden";
+    document.getElementById("vowelsgif").style.display = "none";
+    document.getElementById("hydraDescription").style.visibility = "hidden";
+    document.getElementById("hydraDescription").style.display = "none";
+  }
+
   currentPage = sketchname;
   if (sketchname == "grid") {
+    document.getElementById("hydraDescription").innerHTML =
+      "<h3 style='margin:0.5em 0em'>Grid</h3>Audio reactive grid.";
+    document.getElementById("vowelsgif").src="./assets/images/gifs/hydra_sketches/grid.gif"
     grid(h0);
   }
   if (sketchname == "vowels") {
+    document.getElementById("hydraDescription").innerHTML =
+      "<h3 style='margin:0.5em 0em'>Vowels</h3>Letters constructed using the built-in shape() function. Effects are triggered depending on the positions of five FFT (Fast Fourier Transform) audio bins, so it works best with various frequencies. Uses custom audio reactive functions which can be checked out <a>here</a>.";
+    document.getElementById("vowelsgif").src="./assets/images/gifs/hydra_sketches/vowels.gif"
     vowels(h0);
   }
 }
@@ -181,8 +230,6 @@ function test(hydra) {
 
 function grid(hydra) {
   a.show();
-  document.getElementById("hydraDescription").innerHTML =
-    "<h3 style='margin:0.5em 0em'>Grid</h3>Audio reactive grid.";
   hydra
     .shape(2, 0.02, 0.001)
     .scrollY(0.25)
@@ -206,8 +253,6 @@ function grid(hydra) {
 function vowels(hydra) {
   a.setBins(5);
   a.show();
-  document.getElementById("hydraDescription").innerHTML =
-    "<h3 style='margin:0.5em 0em'>Vowels</h3>Letters constructed using the built-in shape() function. Effects are triggered depending on the positions of five FFT (Fast Fourier Transform) audio bins, so it works best with various frequencies. Uses custom audio reactive functions which can be checked out <a>here</a>.";
   hydra
     .shape(4, 0.1, 0.001)
     .scrollX(() => LOWEST(3, (time % 1) * 0.01 * xdir))

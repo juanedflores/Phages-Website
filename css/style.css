@@ -149,7 +149,6 @@ a:hover {
  */
 canvas {
   width: 100%;
-  /* height: 100%; */
   height: 400px;
   padding-left: 0;
   padding-right: 0;
@@ -161,8 +160,6 @@ canvas {
 #hydra-list-container {
   float: left;
   border: 1px solid white;
-  /* height: 400px; */
-  /* height: 100%; */
   height: auto;
   width: 25%;
 }
@@ -171,14 +168,23 @@ canvas {
   background-color: #bbb;
   width: 70%;
   float: right;
-  /* height: 400px; */
   height: 100%;
+}
+
+#vowelsgif {
+  display: none;
 }
 
 #hydraDescription {
   background-color: black;
-  padding: 1em;
-  /* display: block; */
+  margin: auto; /* this helps center the div with content */
+  padding: 1.5em; /* add some inner padding */
+  max-width: 800px; /* add a max width to div */
+}
+
+#vowelsgif {
+  visibility: hidden;
+  display: none;
 }
 
 #hydra-list ul {
@@ -188,7 +194,7 @@ canvas {
 /**
  * For mobile devices 
  */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 760px) {
   /* done */
   div.about img {
     width: auto; /* auto adjust size */
@@ -209,7 +215,38 @@ canvas {
   /**
    * Hydra Page 
    */
-  #column {
+  #hydra-list-container {
     border: none;
+  }
+
+  #hydra-list-container img {
+    margin: 0.5em 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+  }
+
+  /* #hydra-canvas-container { */
+  /*   display: none; */
+  /* } */
+
+  #hydraCanvas {
+    display: none;
+  }
+
+  #hydraDescription {
+    /* position: relative; */
+    color: white;
+    display: block;
+    /* left: 0; */
+    /* bottom: 0; */
+    /* position: fixed; */
+  }
+
+  #vowelsgif {
+    margin: 0.5em 0;
+    left: 0;
+    display: block;
+    width: 100vw;
   }
 }
