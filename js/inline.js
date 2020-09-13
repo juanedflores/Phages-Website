@@ -57,16 +57,16 @@ function getHydraPage(sketchname) {
   currentPage = sketchname;
   if (sketchname == "grid") {
     document.getElementById("hydraDescription").innerHTML =
-      "<h3 style='margin:0.5em 0em'>Grid</h3>Audio reactive grid.";
+      "<h3 style='margin:0.5em 0em'>Grid</h3>An audio reactive grid modulated by random frequencies that change with audio input.";
     document.getElementById("vowelsgif").src =
       "./assets/images/gifs/hydra_sketches/30_grid.gif";
-    // if (!isMobile) {
-    grid(h0);
-    // }
+    if (!isMobile) {
+      grid(h0);
+    }
   }
   if (sketchname == "vowels") {
     document.getElementById("hydraDescription").innerHTML =
-      "<h3 style='margin:0.5em 0em'>Vowels</h3>Letters constructed using the built-in shape() function. Effects are triggered depending on the positions of five FFT (Fast Fourier Transform) audio bins, so it works best with various frequencies. Uses custom audio reactive functions which can be checked out <a>here</a>.";
+      "<h3 style='margin:0.5em 0em'>Vowels</h3>Letters constructed using the built-in shape() function. Effects are triggered depending on the positions of five FFT (Fast Fourier Transform) audio bins. This works best with various and alternating frequencies. This hydra sketch uses custom audio reactive functions which can be checked out <a>here</a>.";
     document.getElementById("vowelsgif").src =
       "./assets/images/gifs/hydra_sketches/30_vowels.gif";
     // if (!isMobile) {
@@ -81,7 +81,7 @@ let tsnap = 0;
 let psnap = 0;
 let nsnap = 0;
 let ran = 1;
-let freq;
+let freq = 40;
 let noiseScale;
 let slide;
 let snapshot;
@@ -90,6 +90,11 @@ const bintotal = 5;
 let fft0, fft1, fft2, fft3;
 let s1, s2, s3;
 let ranbin;
+
+let t1 = 0.01;
+let t2 = 0.01;
+let t3 = 0.01;
+let t4 = 0.01;
 
 function GLOBAL() {
   xdir = -xdir;
@@ -102,6 +107,10 @@ function GLOBAL() {
   fft1 = a.fft[1] * fftmult;
   fft2 = a.fft[2] * fftmult;
   fft3 = a.fft[3] * fftmult;
+  t1 = Math.random() % 0.25;
+  t2 = Math.random() % 0.15;
+  t3 = Math.random() % 0.05;
+  t4 = Math.random() % 0.01;
   snapshot = time;
   ranbin = Math.floor(Math.random() * bintotal);
   if (ran > 0.5) {
@@ -216,24 +225,35 @@ function test(hydra) {
 
 function grid(hydra) {
   a.show();
+  a.setCutoff(2);
   hydra
-    .shape(2, 0.02, 0.001)
-    .scrollY(0.25)
-    .add(shape(2, 0.02, 0.001).scrollY(-0.25))
+    .shape(2, 0.01, 0.001)
+    .scrollY(0.25, () => HIGH(0, time % 1))
+    .modulate(osc(() => HIGH(0, t1 * 6000), 0.1, 0))
+    .add(
+      shape(2, 0.01, 0.001)
+        .scrollY(-0.25, () => LOW(0, t2 * 10))
+        .modulate(osc(() => HIGH(0, t2 * 6000), 0.1, 0))
+    )
     .scrollY(() => changeDirection(0, time, 0.25))
     .add(
-      shape(2, 0.02, 0.001)
+      shape(2, 0.01, 0.001)
+        .modulate(osc(() => HIGH(0, t3 * 6000), 0.1, 0))
         .rotate(Math.PI / 2)
-        .scrollX(0.25)
+        .scrollX(0.25, () => LOW(0, t3 * 10))
         .add(
-          shape(2, 0.02, 0.001)
+          shape(2, 0.01, 0.001)
+            .modulate(osc(() => HIGH(0, t4 * 6000), 0.1, 0))
             .rotate(Math.PI / 2)
-            .scrollX(-0.25)
+            .scrollX(-0.25, () => LOW(0, t4 * 10))
         )
         .scrollX(() => changeDirection(0, time, 0.25))
     )
-    .repeat(3, 3)
-    .out();
+    .repeat(
+      () => LOW(0, ran * 10) + ran * 10,
+      () => LOW(0, ran * 10) + ran * 10
+    )
+    .out(o0);
 }
 
 function vowels(hydra) {
