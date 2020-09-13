@@ -3,7 +3,6 @@
  */
 function getPage(filename) {
   currenturl = window.location.href;
-  console.log(test);
   if (
     currenturl == "http://localhost:3000/hydraselect.html" ||
     currenturl == "http://192.168.1.76:3000/hydraselect.html" ||
@@ -40,19 +39,9 @@ async function loadHydra() {
   }
 }
 
-// function goToRoot() {
-//   document.getElementById("vowelsgif").style.display = "none";
-//   document.getElementById("hydraDescription").style.display = "none";
-//   window.location = "/";
-// }
-
-let mobileToggle = false;
-
 function getHydraPage(sketchname) {
   let isMobile = window.matchMedia("only screen and (max-width: 760px)")
     .matches;
-
-  mobileToggle = !mobileToggle;
 
   if (isMobile) {
     console.log("Mobile Mode");
@@ -62,9 +51,7 @@ function getHydraPage(sketchname) {
     document.getElementById("hydraDescription").style.display = "block";
   } else {
     document.getElementById("vowelsgif").style.visibility = "hidden";
-    document.getElementById("vowelsgif").style.display = "none";
-    // document.getElementById("hydraDescription").style.visibility = "hidden";
-    // document.getElementById("hydraDescription").style.display = "none";
+    // document.getElementById("vowelsgif").style.display = "none";
   }
 
   currentPage = sketchname;
@@ -73,14 +60,18 @@ function getHydraPage(sketchname) {
       "<h3 style='margin:0.5em 0em'>Grid</h3>Audio reactive grid.";
     document.getElementById("vowelsgif").src =
       "./assets/images/gifs/hydra_sketches/30_grid.gif";
+    // if (!isMobile) {
     grid(h0);
+    // }
   }
   if (sketchname == "vowels") {
     document.getElementById("hydraDescription").innerHTML =
       "<h3 style='margin:0.5em 0em'>Vowels</h3>Letters constructed using the built-in shape() function. Effects are triggered depending on the positions of five FFT (Fast Fourier Transform) audio bins, so it works best with various frequencies. Uses custom audio reactive functions which can be checked out <a>here</a>.";
     document.getElementById("vowelsgif").src =
       "./assets/images/gifs/hydra_sketches/30_vowels.gif";
+    // if (!isMobile) {
     vowels(h0);
+    // }
   }
 }
 

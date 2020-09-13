@@ -171,10 +171,6 @@ canvas {
   height: 100%;
 }
 
-#vowelsgif {
-  display: none;
-}
-
 #hydraDescription {
   background-color: black;
   margin: auto; /* this helps center the div with content */
@@ -183,8 +179,8 @@ canvas {
 }
 
 #vowelsgif {
-  visibility: hidden;
-  display: none;
+  display: none !important;
+  /* visibility: hidden !important; */
 }
 
 #hydra-list ul {
@@ -237,18 +233,18 @@ canvas {
   #hydraDescription {
     /* position: relative; */
     color: white;
-    /* display: block; */
     display: none;
+    visibility: hidden;
+    /* display: none !important; */
     /* left: 0; */
     /* bottom: 0; */
     /* position: fixed; */
   }
 
   #vowelsgif {
-    display: none;
+    display: block !important;
     margin: 0.5em 0;
     left: 0;
-    /* display: block; */
     width: 100vw;
   }
 }
