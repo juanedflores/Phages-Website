@@ -5,7 +5,7 @@ html {
 
 /* done */
 body {
-  color: #ffffff; /* color of text is white */
+  color: white;
   line-height: 1.6; /* line height for <div> elements */
   background-color: #141414; /* background color of page */
 }
@@ -17,6 +17,12 @@ body {
 div {
   font-size: 20px; /* font size */
   font-family: "Barlow Condensed", sans-serif; /* font style */
+  -webkit-user-select: none; /* Safari */
+  -webkit-touch-callout: none; /* iOS Safari*/
+  -moz-user-select: none; /* Mozilla */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -ms-user-select:none; /* IE10+ and Edge */
+  user-select: none; /* Chrome & Opera */
 }
 
 /* done */
@@ -188,7 +194,7 @@ canvas {
 }
 
 /**
- * For mobile devices 
+ * For mobile devices
  */
 @media screen and (max-width: 760px) {
   /* done */
@@ -209,7 +215,7 @@ canvas {
   }
 
   /**
-   * Hydra Page 
+   * Hydra Page
    */
   #hydra-list-container {
     border: none;
