@@ -1,3 +1,16 @@
+/*normal*/
+@font-face {
+  font-family: 'TradeGothicLTStd', sans-serif;
+  src: url(assets/fonts/TradeGothicLTStd.otf) format('opentype');
+}
+
+/*condensed*/
+@font-face {
+  font-family: 'TradeGothicLTStd', sans-serif;
+  src: url(assets/fonts/TradeGothicLTStd-Cn18.otf) format('opentype');
+  font-stretch: condensed;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -6,14 +19,17 @@ html {
 /* done */
 body {
   color: white;
-  line-height: 1.6; /* line height for <div> elements */
-  background-color: #141414; /* background color of page */     
+  line-height: 1.5; /* line height for <div> elements */
+  background-color: #141414; /* background color of page */
   margin: 0;
   padding: 0;
 }
 
 h2{
   text-align:center;
+  font-family: 'TradeGothicLTStd', sans-serif;
+  font-stretch: condensed;
+  font-variant: small-caps;
 }
 
 /**
@@ -21,8 +37,8 @@ h2{
  */
   /* done */
   div {
-    font-size: 20px; /* font size */
-    font-family: "Barlow Condensed", sans-serif; /* font style */
+    font-family: 'TradeGothicLTStd', sans-serif; /* font style */
+    font-size: 2.5vw; /* font size */
     -webkit-user-select: none; /* Safari */
     -webkit-touch-callout: none; /* iOS Safari*/
     -moz-user-select: none; /* Mozilla */
