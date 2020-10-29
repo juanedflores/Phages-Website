@@ -150,6 +150,7 @@ a:hover {
   transition: 0.5s ease; /* fade in/out transition */
   opacity: 0.5; /* when not hovered, half opacity */
   pointer-events: none; /* allow clicks go through the overlay element */
+  padding: 0;
 }
 
 /* done */
