@@ -35,7 +35,6 @@ h2 {
 /**
  * About Page
  */
-/* done */
 div {
   font-family: "TradeGothicLTStd", sans-serif; /* font style */
   font-size: 18px;
@@ -47,7 +46,6 @@ div {
   user-select: none; /* Chrome & Opera */
 }
 
-/* done */
 div.content {
   margin: auto; /* this helps center the div with content */
   padding: 1.5em; /* add some inner padding */
@@ -55,14 +53,12 @@ div.content {
   background-color: rgba(0, 0, 0, 0.9); /* div is a little transparent */
 }
 
-/* done */
 div.about img {
   width: 40%; /* make width only 40% if large screen */
 }
 
-/* done */ /* TODO: better way to organize this? */
-div p {
-  padding: 0;
+div {
+  padding: 0 2em;
 }
 
 /* done */
@@ -224,6 +220,10 @@ canvas {
   div.about img {
     width: auto; /* auto adjust size */
     max-width: 50vw; /* this is max size for mobile */
+  }
+
+  div {
+    padding: 0;
   }
 
   /* done */
