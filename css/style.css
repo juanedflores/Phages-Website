@@ -1,13 +1,13 @@
 /*normal*/
 @font-face {
-  font-family: 'TradeGothicLTStd', sans-serif;
-  src: url(assets/fonts/TradeGothicLTStd.otf) format('opentype');
+  font-family: "TradeGothicLTStd", sans-serif;
+  src: url(assets/fonts/TradeGothicLTStd.otf) format("opentype");
 }
 
 /*condensed*/
 @font-face {
-  font-family: 'TradeGothicLTStd', sans-serif;
-  src: url(assets/fonts/TradeGothicLTStd-Cn18.otf) format('opentype');
+  font-family: "TradeGothicLTStd", sans-serif;
+  src: url(assets/fonts/TradeGothicLTStd-Cn18.otf) format("opentype");
   font-stretch: condensed;
 }
 
@@ -25,9 +25,9 @@ body {
   padding: 0;
 }
 
-h2{
-  text-align:center;
-  font-family: 'TradeGothicLTStd', sans-serif;
+h2 {
+  text-align: center;
+  font-family: "TradeGothicLTStd", sans-serif;
   font-stretch: condensed;
   font-variant: small-caps;
 }
@@ -35,152 +35,152 @@ h2{
 /**
  * About Page
  */
-  /* done */
-  div {
-    font-family: 'TradeGothicLTStd', sans-serif; /* font style */
-    font-size: 2.5vw; /* font size */
-    -webkit-user-select: none; /* Safari */
-    -webkit-touch-callout: none; /* iOS Safari*/
-    -moz-user-select: none; /* Mozilla */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -ms-user-select:none; /* IE10+ and Edge */
-    user-select: none; /* Chrome & Opera */
-  }
+/* done */
+div {
+  font-family: "TradeGothicLTStd", sans-serif; /* font style */
+  font-size: 18px;
+  -webkit-user-select: none; /* Safari */
+  -webkit-touch-callout: none; /* iOS Safari*/
+  -moz-user-select: none; /* Mozilla */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -ms-user-select: none; /* IE10+ and Edge */
+  user-select: none; /* Chrome & Opera */
+}
 
-  /* done */
-  div.content {
-    margin: auto; /* this helps center the div with content */
-    padding: 1.5em; /* add some inner padding */
-    max-width: 800px; /* add a max width to div */
-    background-color: rgba(0, 0, 0, 0.9); /* div is a little transparent */
-  }
+/* done */
+div.content {
+  margin: auto; /* this helps center the div with content */
+  padding: 1.5em; /* add some inner padding */
+  max-width: 800px; /* add a max width to div */
+  background-color: rgba(0, 0, 0, 0.9); /* div is a little transparent */
+}
 
-  /* done */
-  div.about img {
-    width: 40%; /* make width only 40% if large screen */
-  }
+/* done */
+div.about img {
+  width: 40%; /* make width only 40% if large screen */
+}
 
-  /* done */ /* TODO: better way to organize this? */
-  div p {
-    padding: 0 1.5em;
-  }
+/* done */ /* TODO: better way to organize this? */
+div p {
+  padding: 0;
+}
 
-  /* done */
-  nav a {
-    color: #ffffff; /* color of text color */
-    text-decoration: none; /* no decoration with links */
-  }
+/* done */
+nav a {
+  color: #ffffff; /* color of text color */
+  text-decoration: none; /* no decoration with links */
+}
 
-  /* done */
-  a:hover {
-    /* TODO: choose better color that makes sense for Phages? */
-    color: hotpink; /* color of nav buttons when hovered */
-  }
+/* done */
+a:hover {
+  /* TODO: choose better color that makes sense for Phages? */
+  color: hotpink; /* color of nav buttons when hovered */
+}
 
-  /* done */
-  #contentArea {
-    padding-top: 1em; /* spacing between content and nav bar */
-  }
+/* done */
+#contentArea {
+  padding-top: 1em; /* spacing between content and nav bar */
+}
 
-  /**
+/**
    * Navigation Bar
    */
-  /* done */
-  #navoptions ul {
-    overflow-x: hidden; /* overflow content*/
-    padding: 0em; /* remove default padding and make 0 */
-    text-align: center; /* make nav bar centered */
-  }
+/* done */
+#navoptions ul {
+  overflow-x: hidden; /* overflow content*/
+  padding: 0em; /* remove default padding and make 0 */
+  text-align: center; /* make nav bar centered */
+}
 
-  /* done */
-  #navoptions li {
-    display: inline-block; /* display on same line */
-    margin: 5px 10px; /* space the buttons appart */
-    padding: 0 6px 0 6px; /* add some padding to be legible inside border */
-    background-color: black; /* nav button background color */
-    border: 1px solid white; /* nav button border */
-  }
+/* done */
+#navoptions li {
+  display: inline-block; /* display on same line */
+  margin: 5px 10px; /* space the buttons appart */
+  padding: 0 6px 0 6px; /* add some padding to be legible inside border */
+  background-color: black; /* nav button background color */
+  border: 1px solid white; /* nav button border */
+}
 
-  /**
+/**
    * Embedded Videos
    */
-  /* done */
-  .videowrapper {
-    padding: 46.25% 0 0 0; /* set size of embedded vid */
-    position: relative; /* reference is content div */
-  }
+/* done */
+.videowrapper {
+  padding: 46.25% 0 0 0; /* set size of embedded vid */
+  position: relative; /* reference is content div */
+}
 
-  /* done */
-  .videowrapper iframe {
-    position: absolute; /* using videowrapper as reference */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+/* done */
+.videowrapper iframe {
+  position: absolute; /* using videowrapper as reference */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-  /**
+/**
    * Select Pages
    */
-  /* done */
-  .grid-container {
-    display: grid; /* display is grid because it is a grid-container*/
-    grid-template-columns: 2 1; /* one column with two rows for now */
-    padding: 3vw; /* add a little bit of padding */
-  }
+/* done */
+.grid-container {
+  display: grid; /* display is grid because it is a grid-container*/
+  grid-template-columns: 2 1; /* one column with two rows for now */
+  padding: 3vw; /* add a little bit of padding */
+}
 
-  /* done */
-  .grid-item {
-    cursor: pointer; /* change cursor to pointer */
-    padding: 0.5vw; /* a bit of padding around the image button */
-  }
+/* done */
+.grid-item {
+  cursor: pointer; /* change cursor to pointer */
+  padding: 0.5vw; /* a bit of padding around the image button */
+}
 
-  /* done */
-  .grid-item:hover {
-    border: 1px solid rgba(255, 255, 255, 1); /* when hovered draw white border */
-  }
+/* done */
+.grid-item:hover {
+  border: 1px solid rgba(255, 255, 255, 1); /* when hovered draw white border */
+}
 
-  /* done */
-  .grid-item img {
-    width: 100%; /* make img fit the size of its parent (grid item) */
-    height: 100%;
-  }
+/* done */
+.grid-item img {
+  width: 100%; /* make img fit the size of its parent (grid item) */
+  height: 100%;
+}
 
-  /* done */
-  .overlay {
-    position: relative; /* relative to grid-item */
-    top: 50%; /* move text 50% from top */
-    left: 50%; /* move text 50% from right */
-    transition: 0.5s ease; /* fade in/out transition */
-    opacity: 0.5; /* when not hovered, half opacity */
-    pointer-events: none; /* allow clicks go through the overlay element */
-  }
+/* done */
+.overlay {
+  position: relative; /* relative to grid-item */
+  top: 50%; /* move text 50% from top */
+  left: 50%; /* move text 50% from right */
+  transition: 0.5s ease; /* fade in/out transition */
+  opacity: 0.5; /* when not hovered, half opacity */
+  pointer-events: none; /* allow clicks go through the overlay element */
+}
 
-  /* done */
-  .grid-item:hover .overlay {
-    opacity: 1; /* make it opaque if hovered */
-  }
+/* done */
+.grid-item:hover .overlay {
+  opacity: 1; /* make it opaque if hovered */
+}
 
-  /* done */
-  .overlaytext {
-    position: absolute;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    color: #dd6376; /* color of text */
-    font-size: 350%; /* font size */
-    white-space: nowrap; /* don't wrap if name too big */
-  }
+/* done */
+.overlaytext {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #dd6376; /* color of text */
+  font-size: 350%; /* font size */
+  white-space: nowrap; /* don't wrap if name too big */
+}
 
-  /**
+/**
    * Hydra Page
    */
-  canvas {
-    width: 100%;
-    height: 400px;
-    padding-left: 0;
-    padding-right: 0;
-    /*margin-left: auto;
+canvas {
+  width: 100%;
+  height: 400px;
+  padding-left: 0;
+  padding-right: 0;
+  /*margin-left: auto;
     margin-right: auto;*/
   display: block;
   margin: auto;
@@ -219,25 +219,25 @@ h2{
 /**
  * For mobile devices
  */
-  @media screen and (max-width: 760px) {
-    /* done */
-    div.about img {
-      width: auto; /* auto adjust size */
-      max-width: 50vw; /* this is max size for mobile */
-    }
+@media screen and (max-width: 760px) {
+  /* done */
+  div.about img {
+    width: auto; /* auto adjust size */
+    max-width: 50vw; /* this is max size for mobile */
+  }
 
-    /* done */
-    .overlay {
-      opacity: 100; /* just make text completely opaque for mobile */
-    }
+  /* done */
+  .overlay {
+    opacity: 100; /* just make text completely opaque for mobile */
+  }
 
-    /* done */
-    .overlaytext {
-      white-space: nowrap; /* don't wrap if name too big */
-      font-size: 12vw; /* font should be relative to viewport */
-    }
+  /* done */
+  .overlaytext {
+    white-space: nowrap; /* don't wrap if name too big */
+    font-size: 12vw; /* font should be relative to viewport */
+  }
 
-    /**
+  /**
      * Hydra Page
      */
   #hydra-list-container {
